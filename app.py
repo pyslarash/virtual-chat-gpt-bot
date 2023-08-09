@@ -3,10 +3,15 @@ import openai
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from dotenv import load_dotenv
 
-BOT_TOKEN: Final = '6501086288:AAGtQcg8G1cM1MiAm0h-VYoqivpZIrA_CW8'
+# Load environment variables from .env file
+load_dotenv()
+
+# Setting up variables - couldn't really test them yet due to connection issues
+BOT_TOKEN: Final = os.getenv("ENV_BOT_TOKEN")
 BOT_USERNAME: Final = '@VirtualChatGptBot'
-GPT_TOKEN = ''
+GPT_TOKEN = os.getenv("ENV_BOT_TOKEN")
 
 openai.api_key = GPT_TOKEN
 
